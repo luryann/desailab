@@ -1,0 +1,132 @@
+/*
+ * research.css — Research page
+ * Desai Lab · Case Western Reserve University
+ */
+
+/* ===== RESEARCH OVERVIEW ===== */
+
+.research-intro {
+  padding-bottom: var(--sp-16);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--sp-16);
+}
+
+.research-intro-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  max-width: var(--max-w-text);
+}
+
+.research-intro-body p {
+  font-size: 1.05rem;
+}
+
+
+/* ===== PROJECT ARTICLES ===== */
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  padding: var(--sp-12) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.project:last-child {
+  border-bottom: none;
+}
+
+.project-header {
+  margin-bottom: var(--sp-8);
+}
+
+.project-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.project-body {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--sp-10);
+  align-items: start;
+}
+
+/* Project description */
+.project-desc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.project-desc p {
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+.project-collab {
+  margin-top: var(--sp-4);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.project-collab a {
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-mid);
+  transition: color var(--ease), border-color var(--ease);
+  font-style: normal;
+}
+
+.project-collab a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* Techniques sidebar */
+.project-meta {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: var(--sp-6);
+  position: sticky;
+  top: calc(var(--nav-h) + var(--sp-4));
+}
+
+.project-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.project-meta .tags {
+  margin-top: 0;
+  gap: var(--sp-2);
+}
+
+.project-meta .tag {
+  font-size: 0.6rem;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .project-body {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+
+  .project-meta {
+    position: static;
+  }
+
+  .project-title {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+}

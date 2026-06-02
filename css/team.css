@@ -1,0 +1,177 @@
+/*
+ * team.css — Team page
+ * Desai Lab · Case Western Reserve University
+ */
+
+/* ===== PI FEATURE ===== */
+
+.pi-section {
+  padding-bottom: var(--sp-16);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--sp-16);
+}
+
+.pi-inner {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--sp-12);
+  align-items: start;
+}
+
+.pi-avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.pi-avatar-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  width: 100%;
+}
+
+.pi-link {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  text-align: center;
+  text-decoration: none;
+  transition: all var(--ease);
+  white-space: nowrap;
+}
+
+.pi-link:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.pi-info {
+  padding-top: var(--sp-2);
+}
+
+.pi-name {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--sp-2);
+}
+
+.pi-titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin-bottom: var(--sp-8);
+}
+
+.pi-title-line {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pi-bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.pi-bio p {
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+@media (max-width: 640px) {
+  .pi-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+
+  .pi-avatar-wrap {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--sp-6);
+  }
+
+  .pi-avatar-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+  }
+}
+
+
+/* ===== TEAM GRID ===== */
+
+.team-section-head {
+  margin-bottom: var(--sp-10);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-5);
+}
+
+.member-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  transition: border-color var(--ease), background var(--ease);
+}
+
+.member-card:hover {
+  border-color: var(--border-mid);
+  background: var(--bg-card-hover);
+}
+
+.member-top {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.member-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.member-name {
+  font-size: 1.1rem;
+  margin-bottom: var(--sp-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member-role {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--sp-1);
+}
+
+.member-dept {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.member-bio {
+  font-size: 0.87rem;
+  line-height: 1.72;
+  color: var(--text-secondary);
+}

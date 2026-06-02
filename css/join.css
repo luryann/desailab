@@ -1,0 +1,119 @@
+/*
+ * join.css — Join the Lab page
+ * Desai Lab · Case Western Reserve University
+ */
+
+/* ===== STATUS BANNER ===== */
+
+.join-status {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: var(--sp-5) var(--sp-8);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-12);
+}
+
+.join-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.join-status-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+
+/* ===== JOIN CONTENT ===== */
+
+.join-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-16);
+  align-items: start;
+  max-width: var(--max-w-narrow);
+}
+
+.join-message h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: var(--sp-6);
+}
+
+.join-message-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.join-message-body p {
+  font-size: 0.98rem;
+  line-height: 1.78;
+}
+
+.join-contact {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: var(--sp-8);
+  height: fit-content;
+}
+
+.join-contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-5);
+}
+
+.join-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.join-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.join-contact-item-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.join-contact-item-value {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--ease);
+  border-bottom: 1px solid var(--border-mid);
+  display: inline-block;
+}
+
+.join-contact-item-value:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .join-body {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+}

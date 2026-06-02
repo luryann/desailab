@@ -1,0 +1,184 @@
+/*
+ * explainer.css — HSC Educational Explainer page
+ * Desai Lab · Case Western Reserve University
+ */
+
+/* ===== EXPLAINER LAYOUT ===== */
+
+.explainer-intro {
+  max-width: var(--max-w-text);
+  margin-bottom: var(--sp-16);
+}
+
+.explainer-intro p {
+  font-size: 1.1rem;
+  line-height: 1.78;
+}
+
+/* Table of contents */
+.explainer-toc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: var(--sp-6) var(--sp-8);
+  margin-bottom: var(--sp-16);
+  max-width: 480px;
+}
+
+.explainer-toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.explainer-toc ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  counter-reset: toc-counter;
+}
+
+.explainer-toc li {
+  counter-increment: toc-counter;
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+}
+
+.explainer-toc li::before {
+  content: counter(toc-counter, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+
+.explainer-toc a {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+.explainer-toc a:hover {
+  color: var(--text);
+}
+
+
+/* ===== EXPLAINER SECTIONS ===== */
+
+.explainer-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-16);
+}
+
+.explainer-section {
+  scroll-margin-top: calc(var(--nav-h) + var(--sp-8));
+}
+
+.explainer-section-num {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: var(--sp-3);
+}
+
+.explainer-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: var(--sp-6);
+}
+
+.explainer-section-body {
+  max-width: var(--max-w-text);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  border-left: 2px solid var(--border);
+  padding-left: var(--sp-8);
+}
+
+.explainer-section-body p {
+  font-size: 1rem;
+  line-height: 1.82;
+}
+
+/* Highlight callout */
+.explainer-callout {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: var(--sp-5) var(--sp-6);
+  margin-top: var(--sp-2);
+}
+
+.explainer-callout p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Lab connection note at bottom */
+.explainer-lab-note {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: var(--sp-8);
+  margin-top: var(--sp-20);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-8);
+}
+
+.explainer-lab-note-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.explainer-lab-note-text p {
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+
+.explainer-lab-note-text a {
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-mid);
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.explainer-lab-note-text a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .explainer-section-body {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--border);
+    padding-top: var(--sp-6);
+  }
+
+  .explainer-lab-note {
+    flex-direction: column;
+    gap: var(--sp-4);
+  }
+}

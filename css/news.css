@@ -1,0 +1,75 @@
+/*
+ * news.css — News page
+ * Desai Lab · Case Western Reserve University
+ */
+
+/* ===== EMPTY STATE ===== */
+
+.news-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--sp-20) 0 var(--sp-32);
+}
+
+.news-empty-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-8);
+  position: relative;
+}
+
+.news-empty-icon::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px dashed rgba(168, 25, 42, 0.15);
+}
+
+.news-empty-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent);
+  fill: none;
+  opacity: 0.7;
+}
+
+.news-empty h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: var(--sp-4);
+}
+
+.news-empty p {
+  font-size: 1rem;
+  max-width: 480px;
+  margin-bottom: var(--sp-8);
+}
+
+/* Coming soon indicator */
+.news-follow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-8);
+}
+
+.news-follow-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.news-follow-links {
+  display: flex;
+  gap: var(--sp-3);
+}
