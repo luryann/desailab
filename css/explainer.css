@@ -11,7 +11,7 @@
 }
 
 .explainer-intro p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.78;
 }
 
@@ -26,11 +26,10 @@
 }
 
 .explainer-toc-label {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
   margin-bottom: var(--sp-4);
 }
 
@@ -39,34 +38,33 @@
   display: flex;
   flex-direction: column;
   gap: var(--sp-2);
-  counter-reset: toc-counter;
 }
 
 .explainer-toc li {
-  counter-increment: toc-counter;
   display: flex;
   align-items: baseline;
   gap: var(--sp-3);
 }
 
 .explainer-toc li::before {
-  content: counter(toc-counter, decimal-leading-zero);
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: var(--accent);
-  letter-spacing: 0.1em;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
   flex-shrink: 0;
+  opacity: 0.7;
 }
 
 .explainer-toc a {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   text-decoration: none;
   transition: color var(--ease);
 }
 
 .explainer-toc a:hover {
-  color: var(--text);
+  color: var(--accent);
 }
 
 
@@ -82,17 +80,31 @@
   scroll-margin-top: calc(var(--nav-h) + var(--sp-8));
 }
 
-.explainer-section-num {
-  font-family: var(--font-mono);
-  font-size: 0.63rem;
-  letter-spacing: 0.16em;
-  color: var(--accent);
-  margin-bottom: var(--sp-3);
+.explainer-section-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-6);
+}
+
+.explainer-section-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  outline: 1px solid var(--border);
+}
+
+.explainer-section-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .explainer-section h2 {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
-  margin-bottom: var(--sp-6);
 }
 
 .explainer-section-body {
@@ -100,35 +112,32 @@
   display: flex;
   flex-direction: column;
   gap: var(--sp-5);
-  border-left: 2px solid var(--border);
-  padding-left: var(--sp-8);
+  padding-left: calc(48px + var(--sp-5));
 }
 
 .explainer-section-body p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.82;
 }
 
 /* Highlight callout */
 .explainer-callout {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-left: 2px solid var(--accent);
-  border-radius: 0 var(--r) var(--r) 0;
+  background: var(--accent-dim);
+  border-radius: var(--r);
   padding: var(--sp-5) var(--sp-6);
   margin-top: var(--sp-2);
 }
 
 .explainer-callout p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  font-size: 1rem;
+  color: var(--text);
+  font-family: var(--font-display);
   font-style: italic;
 }
 
 /* Lab connection note at bottom */
 .explainer-lab-note {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--plum-dim);
   border-radius: var(--r);
   padding: var(--sp-8);
   margin-top: var(--sp-20);
@@ -138,40 +147,39 @@
 }
 
 .explainer-lab-note-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: var(--accent-dim);
-  border: 1px solid var(--accent-glow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--bg-card);
+  outline: 1px solid var(--border);
   flex-shrink: 0;
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--accent);
-  font-size: 1.1rem;
+  overflow: hidden;
+}
+
+.explainer-lab-note-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .explainer-lab-note-text p {
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   line-height: 1.72;
 }
 
 .explainer-lab-note-text a {
-  color: var(--text-secondary);
-  border-bottom: 1px solid var(--border-mid);
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-glow);
   transition: color var(--ease), border-color var(--ease);
 }
 
 .explainer-lab-note-text a:hover {
-  color: var(--text);
-  border-color: var(--accent);
+  color: var(--accent-bright);
+  border-color: var(--accent-bright);
 }
 
 @media (max-width: 640px) {
   .explainer-section-body {
-    border-left: none;
     padding-left: 0;
     border-top: 1px solid var(--border);
     padding-top: var(--sp-6);
